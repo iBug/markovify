@@ -1,6 +1,7 @@
 from .chain import Chain
 from .text import Text
 
+
 def get_model_dict(thing):
     if isinstance(thing, Chain):
         return thing.model
@@ -12,6 +13,7 @@ def get_model_dict(thing):
         return thing
 
     raise ValueError("`models` should be instances of list, dict, markovify.Chain, or markovify.Text")
+
 
 def combine(models, weights=None):
     if weights == None:

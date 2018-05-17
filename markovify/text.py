@@ -1,4 +1,7 @@
-import re
+try:
+    import regex as re
+except ImportError:
+    import re
 import json
 import random
 from .splitters import split_into_sentences
@@ -9,8 +12,10 @@ DEFAULT_MAX_OVERLAP_RATIO = 0.7
 DEFAULT_MAX_OVERLAP_TOTAL = 15
 DEFAULT_TRIES = 10
 
+
 class ParamError(Exception):
     pass
+
 
 class Text(object):
 

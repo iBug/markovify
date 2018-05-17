@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*- 
-import re
+try:
+    import regex as re
+except ImportError:
+    import re
 
-ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
-ascii_uppercase = ascii_lowercase.upper()
+try:
+    from string import ascii_lowercase, ascii_uppercase
+except ImportError:
+    ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
+    ascii_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # States w/ with thanks to https://github.com/unitedstates/python-us
 # Titles w/ thanks to https://github.com/nytimes/emphasis and @donohoe
